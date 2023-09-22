@@ -1,14 +1,16 @@
 package personnages;
 
-public class Gaulois {
+public class Chef {
 	private String nom;
 	private int force;
-	@SuppressWarnings("unused")
 	private int effetPotion = 1;
+	private Village village;
 
-	public Gaulois(String nom, int force) {
+	public Chef(String nom, int force, Village village) {
 		this.nom = nom;
 		this.force = force;
+		this.effetPotion = effetPotion;
+		this.village = village;
 	}
 
 	public String getNom() {
@@ -17,12 +19,10 @@ public class Gaulois {
 
 	public void parler(String texte) {
 		System.out.println(prendreParole() + "« " + texte + "»");
-
 	}
 
 	private String prendreParole() {
-		return "Le gaulois " + nom + " : ";
-
+		return "Le chef " + nom + " du village " + village.getNom() + " : ";
 	}
 
 	public void frapper(Romain romain) {
@@ -30,14 +30,4 @@ public class Gaulois {
 		romain.recevoirCoup(force / 3);
 	}
 
-	// @Override
-	// public String toString() {
-	// return "Gaulois [nom=" + nom + ", force=" + force + ", effetPotion=" +
-	// effetPotion + "]";
-	// }
-
-	public static void main(String[] args) {
-		// TODO créer un main permettant de tester la classe Gaulois }
-		// Gaulois asterix = Gaulois(Asterix, 8); --> ne marche pas ...
-	}
 }
