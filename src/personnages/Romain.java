@@ -29,4 +29,19 @@ public class Romain {
 			parler("J'abandonne...");
 		}
 	}
+
+	public static void main(String[] args) {
+
+		// Méthode prendre parole
+		Romain cesars = new Romain("Césars", 8);
+		String message = cesars.prendreParole();
+		// System.out.println(message);
+
+		// Méthode parler
+		cesars.parler("Je suis le plus fort !");
+
+		// Méthode recevoirCoup
+		cesars.recevoirCoup(3);
+		cesars.recevoirCoup(5);
+	}
 }

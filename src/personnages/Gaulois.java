@@ -44,10 +44,14 @@ public class Gaulois {
 
 		// Appel de la méthode prendreParole
 		String message = asterix.prendreParole();
-		System.out.println(message + "Bonjour, je suis Asterix !");
+		// System.out.println(message);
 
-		// Appel de méthode parler
-		asterix.parler(message);
+		// Appel de la méthode parler
+		asterix.parler("Je vais tous vous battre !");
+
+		// Appel de la méthode frapper
+		Romain cesars = new Romain("Césars", 8);
+		asterix.frapper(cesars);
 
 	}
 }
