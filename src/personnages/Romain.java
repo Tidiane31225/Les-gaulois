@@ -33,15 +33,15 @@ public class Romain {
 	public static void main(String[] args) {
 
 		// Méthode prendre parole
-		Romain cesars = new Romain("Césars", 8);
-		String message = cesars.prendreParole();
+		Romain minus = new Romain("Minus", 8);
+		String message = minus.prendreParole();
 		// System.out.println(message);
 
 		// Méthode parler
-		cesars.parler("Je suis le plus fort !");
+		minus.parler("Je suis le plus fort !");
 
 		// Méthode recevoirCoup
-		cesars.recevoirCoup(3);
-		cesars.recevoirCoup(5);
+		minus.recevoirCoup(3);
+		minus.recevoirCoup(5);
 	}
 }

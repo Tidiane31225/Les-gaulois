@@ -50,8 +50,8 @@ public class Gaulois {
 		asterix.parler("Je vais tous vous battre !");
 
 		// Appel de la méthode frapper
-		Romain cesars = new Romain("Césars", 8);
-		asterix.frapper(cesars);
+		Romain minus = new Romain("Minus", 8);
+		asterix.frapper(minus);
 
 	}
 }
