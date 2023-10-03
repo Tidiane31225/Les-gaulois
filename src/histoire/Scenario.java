@@ -9,20 +9,23 @@ public class Scenario {
 	public static void main(String[] args) {
 		// Arrivée D'Asterix
 		Gaulois asterix = new Gaulois("Astérix", 8);
-		System.out.println("Le Gaulois " + asterix.getNom() + " arrive.");
-		Druide druide = new Druide("Panoramix", 1, 10);
+		Gaulois obelix = new Gaulois("Obélix", 25);
+		// System.out.println("Le Gaulois " + asterix.getNom() + " arrive.");
+		Druide panoramix = new Druide("Panoramix", 5, 10);
 
 		// Minus découvre Asterix
 		Romain minus = new Romain("Minus", 6);
-		System.out.println("Le Romain " + minus.getNom() + " s'aperçoit de l'arrivée du Gaulois.");
+		// System.out.println("Le Romain " + minus.getNom() + " s'aperçoit de l'arrivée
+		// du Gaulois.");
 
 		// scénario
-		druide.preparerPotion();
+		panoramix.preparerPotion();
+		panoramix.booster(obelix, panoramix);
+		obelix.parler("Par Bélénos, ce n'est pas juste !");
+		panoramix.booster(asterix, panoramix);
 		// asterix.boirePotion(preparerPotion);
-		asterix.parler("Bonjour à tous ! ");
+		asterix.parler("Bonjour ! ");
 		minus.parler("UN GAU... UN GAUGAU...");
-		asterix.frapper(minus);
-		asterix.frapper(minus);
 		asterix.frapper(minus);
 
 	}

@@ -37,9 +37,17 @@ public class Druide {
 		this.forcePotion = forceAleatoire;
 		System.out.println("Potion préparée avec une force de " + forcePotion);
 		if (forcePotion > 7) {
-			System.out.println("J'ai préparé une super potion de force");
+			System.out.println(" Druide : J'ai préparé une super potion de force >>");
 		} else {
-			System.out.println("Je n'ai pas eu tout les ingrédients pour préparer ma Potion");
+			System.out.println(" Druide : << Je n'ai pas eu tout les ingrédients pour préparer ma Potion >>");
+		}
+	}
+
+	public void booster(Gaulois gaulois, Druide druide) {
+		if (gaulois.getNom().equals("Obélix")) {
+			System.out.println("Non, Obélix !... Tu n’auras pas de potion magique !");
+		} else {
+			gaulois.boirePotion(druide);
 		}
 	}
 
