@@ -9,6 +9,8 @@ public class Romain {
 		this.force = force;
 	}
 
+	private String texte;
+
 	public String getNom() {
 		return nom;
 	}
@@ -24,18 +26,22 @@ public class Romain {
 	public void recevoirCoup(int forceCoup) {
 		force -= forceCoup;
 		if (force > 0) {
-			parler("Aïe");
+		parler("Aïe");
 		} else {
-			parler("J'abandonne...");
+		parler("J'abandonne...");
 		}
+
 	}
+
+         
+
 
 	public static void main(String[] args) {
 
 		// Méthode prendre parole
 		Romain minus = new Romain("Minus", 8);
 		String message = minus.prendreParole();
-		// System.out.println(message);
+		System.out.println(message);
 
 		// Méthode parler
 		minus.parler("Je suis le plus fort !");

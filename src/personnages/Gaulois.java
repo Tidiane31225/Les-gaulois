@@ -38,7 +38,7 @@ public class Gaulois {
 		return "Gaulois [nom=" + nom + ", force=" + force + ", effetPotion=" + effetPotion + "]";
 	}
 
-	// public int effetPotion = 1;
+
 
 	public void boirePotion(Druide preparerPotion) {
 		System.out.println("Merci Druide je sens que ma force est " + preparerPotion + " fois plus forte qu'avant");
@@ -53,7 +53,7 @@ public class Gaulois {
 
 		// Appel de la méthode prendreParole
 		String message = asterix.prendreParole();
-		// System.out.println(message);
+		System.out.println(message);
 
 		// Appel de la méthode parler
 		asterix.parler("Je vais tous vous battre !");
