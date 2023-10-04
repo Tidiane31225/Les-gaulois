@@ -8,7 +8,7 @@ public class Gaulois {
 	private String nom;
 	private int force;
 	@SuppressWarnings("unused")
-	private int effetPotion = 1;
+	public int effetPotion = 1;
 
 	public Gaulois(String nom, int force) {
 		this.nom = nom;
@@ -29,9 +29,11 @@ public class Gaulois {
 
 	}
 
+
 	public void frapper(Romain romain) {
+		int forceCoup = force / 3 * effetPotion;
 		System.out.println(nom + " envoie un grand coup dans la mâchoire de " + romain.getNom());
-		romain.recevoirCoup(force / 3 * effetPotion);
+		romain.recevoirCoup(forceCoup);
 	}
 
 	@Override
@@ -41,9 +43,9 @@ public class Gaulois {
 
 
 
-	public void boirePotion(Druide preparerPotion) {
-		System.out.println(
-				nom + ": Merci Druide je sens que ma force est " + preparerPotion + " fois plus forte qu'avant");
+	public void boirePotion(int forcePotion) {
+		effetPotion = forcePotion;
+		parler("Merci Druide je sens que ma force est " + effetPotion + " fois plus forte qu'avant");
 	}
 
 	public static void main(String[] args) {
@@ -63,7 +65,7 @@ public class Gaulois {
 		// Appel de la méthode BoirePotion
 		Druide panoramix = new Druide("Panoramix", 5, 10);
 		panoramix.preparerPotion();
-		asterix.boirePotion(panoramix);
+		// asterix.boirePotion(panoramix);
 
 		// Appel de la méthode frapper
 		Romain minus = new Romain("Minus", 8);

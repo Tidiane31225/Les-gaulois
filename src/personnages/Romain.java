@@ -9,7 +9,7 @@ public class Romain {
 		this.force = force;
 	}
 
-	private String texte;
+	// private String texte;
 
 	public String getNom() {
 		return nom;
@@ -27,6 +27,7 @@ public class Romain {
 		force -= forceCoup;
 		if (force > 0) {
 		parler("Aïe");
+		System.out.println(force);
 		} else {
 		parler("J'abandonne...");
 		}
@@ -47,7 +48,7 @@ public class Romain {
 		minus.parler("Je suis le plus fort !");
 
 		// Méthode recevoirCoup
-		minus.recevoirCoup(3);
+		minus.recevoirCoup(1);
 		minus.recevoirCoup(5);
 	}
 }
