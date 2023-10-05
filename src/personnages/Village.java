@@ -9,6 +9,7 @@ public class Village {
 
 	public Village(String nom, int nbVillageoisMaximum) {
 		this.nom = nom;
+		this.nbVillageoisMaximum = nbVillageoisMaximum;
 		this.villageois = new Gaulois[nbVillageoisMaximum];
 		this.nbVillageois = 0;
 	}
@@ -22,9 +23,9 @@ public class Village {
 	}
 
 	public void ajouterHabitant(Gaulois gaulois) {
-		if (nbVillageois < nbVillageoisMaximum) {
+		if (nbVillageois <= nbVillageoisMaximum) {
 			villageois[nbVillageois] = gaulois;
-			System.out.println(gaulois.getNom() + "à été ajouté au village" + nom);
+			System.out.println(gaulois.getNom() + " à été ajouté au " + nom);
 			nbVillageois++;
 		} else {
 			System.out.println("Le village est plein !!!");
@@ -45,9 +46,9 @@ public class Village {
 	public void afficherVillageois() {
 		System.out.println("Dans le village du Chef " + chef.getNom() + " vivent les légendaires gaulois :");
 		for (int i = 0; i < nbVillageois; i++) {
-			Gaulois villageois = villageois[i];
+			Gaulois villageois1 = villageois[i];
 			if (villageois != null) {
-				System.out.println("- " + villageois.getNom());
+				System.out.println("- " + villageois1.getNom());
 			}
 		}
 	}
@@ -56,8 +57,11 @@ public class Village {
 		Village levillage = new Village("Village des Irréductibles", 30);
 		// Gaulois gaulois = village.trouverHabitant(30); Numero de villageois invalide
 		Chef abraracourcix = new Chef("Abraracourcix", 6, levillage);
+		levillage.setChef(abraracourcix);
 		Gaulois asterix = new Gaulois("Astérix", 8);
+		Gaulois obelix = new Gaulois("Obélix", 25);
 		levillage.ajouterHabitant(asterix);
+		levillage.ajouterHabitant(obelix);
 		// Gaulois gaulois = village.trouverHabitant(1);System.out.println(gaulois); Il
 		// n'existe pas de villageois gaulois a la pos 1 du tab
 		levillage.afficherVillageois();
