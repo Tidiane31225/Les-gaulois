@@ -1,33 +1,45 @@
 package histoire;
 
-import personnages.Druide;
+
+	import personnages.Druide;
+import personnages.Equipement;
 import personnages.Gaulois;
 import personnages.Romain;
+//	import villagegaulois.Musee;
 
-public class Scenario {
+	public class Scenario {
 
-	public static void main(String[] args) {
-		// Arrivée D'Asterix
-		Gaulois asterix = new Gaulois("Astérix", 8);
-		Gaulois obelix = new Gaulois("Obélix", 25);
-		// System.out.println("Le Gaulois " + asterix.getNom() + " arrive.");
-		Druide panoramix = new Druide("Panoramix", 5, 10);
+		public static void main(String[] args) {
+			Druide druide = new Druide("Panoramix", 5, 10);
+			druide.parler("Je vais aller préparer une petite potion...");
+			druide.preparerPotion();
+			Gaulois obelix = new Gaulois("Obélix", 25);
+			Gaulois asterix = new Gaulois("Astérix", 8);
+			druide.booster(obelix,druide);
+			obelix.parler("Par Bélénos, ce n'est pas juste !");
+			druide.booster(asterix,druide);
+			asterix.parler("Bonjour");
+			Romain minus = new Romain("Minus", 6);
+			Romain milexcus = new Romain("Milexcus", 8);
+			minus.sEquiper(Equipement.BOUCLIER);
+			minus.sEquiper(Equipement.CASQUE);
+			milexcus.sEquiper(Equipement.CASQUE);
+			minus.parler("UN GAU... UN GAUGAU...");
+			do {
+				asterix.frapper(minus);
+			} while (minus.getForce() > 0);
+			milexcus.parler("UN GAU... UN GAUGAU...");
+			do {
+				asterix.frapper(milexcus);
+			} while (milexcus.getForce() > 0);
+			
+//			Partie a decommenter
+			
+//			Musee musee = new Musee();
+//			asterix.faireUneDonnation(musee);
 
-		// Minus découvre Asterix
-		Romain minus = new Romain("Minus", 6);
-		// System.out.println("Le Romain " + minus.getNom() + " s'aperçoit de l'arrivée
-		// du Gaulois.");
-
-		// scénario
-		panoramix.preparerPotion();
-		panoramix.booster(obelix, panoramix);
-		obelix.parler("Par Bélénos, ce n'est pas juste !");
-		panoramix.booster(asterix, panoramix);
-		// asterix.boirePotion(preparerPotion);
-		asterix.parler("Bonjour ! ");
-		minus.parler("UN GAU... UN GAUGAU...");
-		asterix.frapper(minus);
+		}
 
 	}
 
-}
+

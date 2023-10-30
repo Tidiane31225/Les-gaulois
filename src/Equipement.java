@@ -1,5 +1,5 @@
 
-public enum equipement {
+public enum Equipement {
 	CASQUE("Casque"), BOUCLIER("Bouclier");
 
 	private String nom;
@@ -9,8 +9,8 @@ public enum equipement {
 	}
 
 	@Override
-	@override
 	public String toString() {
 	return null;
+}
 
 }
