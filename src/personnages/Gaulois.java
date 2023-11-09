@@ -53,11 +53,28 @@ public class Gaulois {
 	}
 
 
-
 	public void boirePotion(int forcePotion) {
 		effetPotion = forcePotion;
 		parler("Merci Druide je sens que ma force est " + effetPotion + " fois plus forte qu'avant");
 	}
+
+	public void faireUneDonation(Musee musee) {
+		 if (trophees.length > 0) {
+				StringBuilder annonce = new StringBuilder(
+						"Le gaulois " + this.getNom() + " : « Je donne au musée tous mes trophées :");
+		        for (Trophee trophee : trophees) {
+		            if (trophee != null) {
+		                Equipement equipement = trophee.getEquipement();
+		                annonce.append("\n- ").append(equipement.name());
+		            }
+		        }
+		        annonce.append(" »");
+
+		        musee.donnerTrophees(this, trophees);
+		        trophees = new Trophee[200];  // Réinitialise le tableau de trophées du Gaulois
+		        System.out.println(annonce.toString());
+		    }
+		}
 
 	public static void main(String[] args) {
 		// TODO créer un main permettant de tester la classe Gaulois }

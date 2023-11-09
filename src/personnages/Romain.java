@@ -84,18 +84,20 @@ public class Romain {
 			equipementEjecte = ejecterEquipement();
 			parler("J'abandonne...");
 		}
-		switch (force) {
-		case 0:
-			parler("Aïe");
-			break;
+		// switch (force) {
+		// case 0:
+		// parler("Aïe");
+		// break;
 		// default:
 		// equipementEjecte = ejecterEquipement1();
 		// parler("J'abandonne...");
 		// break;
-		}
+		// }
 		// post condition la force a diminué
 		if (force == oldForce) {
-			// Romain.isVictoire();
+			this.victoire = true;
+			parler("J'ai gagné !!!");
+
 		}
 
 		return equipementEjecte;

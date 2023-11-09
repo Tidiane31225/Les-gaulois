@@ -26,11 +26,21 @@ import personnages.Romain;
 			milexcus.sEquiper(Equipement.CASQUE);
 			minus.parler("UN GAU... UN GAUGAU...");
 			do {
-				asterix.frapper(minus);
+				if (minus.isVictoire() == false) {
+					asterix.frapper(minus);
+				} else {
+					break;
+				}
 			} while (minus.getForce() > 0);
 			milexcus.parler("UN GAU... UN GAUGAU...");
 			do {
+
+				if (milexcus.isVictoire() == false) {
 				asterix.frapper(milexcus);
+				} else {
+					break;
+				}
+				
 			} while (milexcus.getForce() > 0);
 			
 //			Partie a decommenter
